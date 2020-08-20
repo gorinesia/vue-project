@@ -7,11 +7,11 @@ export default new Vuex.Store({
   state: {
     message: '',
     form: {
-      firstName: 'AKINORI',
-      lastName: 'SAKAKIBARA',
-      Email: 'gorion.1213@gmail.com',
-      tel: '090-4215-9231',
-      birthday: '1989/12/13'
+      gender: 'Man',
+      birthday: '1989/12/13',
+      question: 'OK!!!',
+      textMessage: 'Thank you!!!'
+      
     }
   },
   getters: {

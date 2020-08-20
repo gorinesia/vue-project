@@ -29,6 +29,7 @@
       <br><br>
       <span>select: {{ picked3 }}</span>
     </div>
+    <br>
     <button class="button is-primary" @click="back">前へ</button>
     <button class="button is-primary" @click="next">次へ</button>
   </div>
@@ -51,7 +52,7 @@ export default {
 			this.$router.push('/')
 		},
     next() {
-      this.$router.push('/birthday')
+      this.$router.push('/textMessage')
     }
 	}
 }

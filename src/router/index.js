@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import NameForm from '../views/NameForm.vue'
-import ContactForm from '../views/ContactForm.vue'
-import BirthDayForm from '../views/BirthDayForm.vue'
+import Information from '../views/Information.vue'
+import Question from '../views/Question.vue'
+import TextMessage from '../views/TextMessage.vue'
 import ConfirmForm from '../views/ConfirmForm.vue'
 
 Vue.use(VueRouter)
@@ -10,18 +10,18 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'NameForm',
-    component: NameForm
+    name: 'Information',
+    component: Information
   },
   {
-    path: '/contact',
-    name: 'ContactForm',
-    component: ContactForm
+    path: '/question',
+    name: 'Question',
+    component: Question
   },
   {
-    path: '/birthday',
-    name: 'BirthDayForm',
-    component: BirthDayForm
+    path: '/textMessage',
+    name: 'TextMessage',
+    component: TextMessage
   },
   {
     path: '/confirm',

@@ -7,7 +7,7 @@
       <br>
       <input type="radio" id="man" value="男性" v-model="picked"> 男性
       <input type="radio" id="woman" value="女性" v-model="picked"> 女性
-      <br><br>
+      <br>
       <span>gender: {{ picked }}</span>
     </div> 
     <div>	
@@ -38,6 +38,7 @@
       </div>
           日	
     </div>
+    <br><br>
     <button class="button is-primary" @click="next">次へ</button>
   </div>
 </template>
@@ -64,7 +65,7 @@ export default {
   },
   methods: {
     next() {
-      this.$router.push('/contact')
+      this.$router.push('/question')
     }
   },
   filters: {
@@ -86,11 +87,4 @@ export default {
 </script>
 
 <style scoped>
-button {
-  margin: 5px;
-}
-
-span {
-  margin-bottom: 10px;
-}
 </style>

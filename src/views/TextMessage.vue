@@ -24,7 +24,7 @@ export default {
 	},
 	methods: {
 		back() {
-			this.$router.push('/contact')
+			this.$router.push('/question')
 		},
 		next() {
       this.$router.push('/confirm')

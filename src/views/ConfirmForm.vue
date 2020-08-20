@@ -1,12 +1,23 @@
 <template>
   <div>
-		<h1>STEP.04</h1>
-		<h2>Confirmation</h2>
-		<p>Name: {{ form.firstName }} {{ form.lastName }}</p>
-		<p>Email: {{ form.Email }}</p>
-		<p>Tel: {{ form.tel }}</p>
-		<p>Birthday: {{ form.birthday }}</p>
-		<button @click="back">前へ</button>
+		<h1 class="button is-info is-medium">STEP.04</h1>
+		<h2 class="is-size-4 has-text-weight-bold hero is-primary">Confirmation</h2>
+		<p>gender: 
+			{{ form.gender }}
+		</p>
+		<br>
+		<p>birthday: 
+			{{ form.birthday }}
+		</p>
+		<br>
+		<p>question: 
+			{{ form.question }}
+		</p>
+		<br>
+		<p>textMessage: 
+			{{ form.textMessage}}
+		</p>
+		<button class="button is-primary" @click="back">前へ</button>
 	</div>
 </template>
 
@@ -28,7 +39,7 @@ export default {
 			this.stepNumber++;
 		},
 		back() {
-			this.$router.push('/birthday')
+			this.$router.push('/textMessage')
 		},
 	}
 }
