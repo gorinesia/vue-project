@@ -1,5 +1,7 @@
 <template>
-  <button>前へ戻る</button>
+  <div>
+    <button class="button is-primary"></button>
+  </div>
 </template>
 
 <script>
