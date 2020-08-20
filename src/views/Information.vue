@@ -1,13 +1,14 @@
 <template>
   <div>
     <h1 class="button is-info is-medium">STEP.01</h1>
+    <br><br>
     <p class="is-size-4 has-text-weight-bold hero is-primary">お客様の情報を入力してください</p>
     <div class="section">
       <p class="has-text-info"> -性別- </p>
       <br>
       <input type="radio" id="man" value="男性" v-model="picked"> 男性
       <input type="radio" id="woman" value="女性" v-model="picked"> 女性
-      <br>
+      <br><br>
       <span>gender: {{ picked }}</span>
     </div> 
     <div>	

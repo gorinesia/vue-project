@@ -1,6 +1,7 @@
 <template>
   <div>
 		<h1 class="button is-info is-medium">STEP.04</h1>
+		<br><br>
 		<h2 class="is-size-4 has-text-weight-bold hero is-primary">Confirmation</h2>
 		<p>gender: 
 			{{ form.gender }}
@@ -17,12 +18,19 @@
 		<p>textMessage: 
 			{{ form.textMessage}}
 		</p>
+		<br>
+		<p>message:{{ message }}</p>
 		<button class="button is-primary" @click="back">前へ</button>
 	</div>
 </template>
 
 <script>
 export default {
+	data: function(){
+		return {
+			message: this.$store.getters.message
+		}
+	},
   computed:{
 		form() {
 			return this.$store.state.form

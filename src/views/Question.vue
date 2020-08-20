@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="button is-info is-medium">STEP.02</h1>
+    <br><br>
     <p class="is-size-4 has-text-weight-bold hero is-primary">以下にお答えください</p>
     <br>
     <div>

@@ -3,10 +3,6 @@
     <div id="nav">
     <router-view/>
     </div>
-      <!-- <router-link to="/">Name</router-link> |
-      <router-link to="/contact">Contact</router-link> |
-      <router-link to="/birthday">BirthDay</router-link> |
-      <router-link to="/confirm">Confirm</router-link> -->
   </div>
 </template>
 
