@@ -5,26 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    message: '',
     form: {
       gender: 'Man',
       birthday: '1989/12/13',
       question: 'OK!!!',
-      textMessage: 'Thank you!!!'
-      
-    }
+    },
+    textMessage: '' 
   },
   getters: {
-    message: state => state.message
+    textMessage: state => state.textMessage
   },
   mutations: {
-    updateMessage(state, newMessage) {
-      state.message = newMessage;
+    updatetextMessage(state, newMessage) {
+      state.textMessage = newMessage;
     }
   },
   actions: {
-    updateMessage({commit}, newMessage) {
-      commit('updateMessage', newMessage);
+    updatetextMessage({commit}, newMessage) {
+      commit('updatetextMessage', newMessage);
     }
   }
 })

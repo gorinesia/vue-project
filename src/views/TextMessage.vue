@@ -7,11 +7,9 @@
 		<p class="is-size-5 has-text-info">-ご相談内容-</p>
 		<br><br>
 		<div>
-			<textarea class="textarea is-info is-large" v-model="textMessage"></textarea>
+			<textarea class="textarea is-info is-large" type="text" v-model="textMessage"></textarea>
 		</div>
 		<pre>TextMessage: {{ textMessage }}</pre>
-		<input type="text" v-model="message">
-		<p>{{ message }}</p>
 		<button class="button is-primary" @click="back">前へ</button>
 		<button class="button is-primary" @click="next">次へ</button>
   </div>
@@ -20,18 +18,13 @@
 <script>
 
 export default {
-  data: function(){
-		return {
-			textMessage: null
-		}
-	},
 	computed: {
-    message: {
+    textMessage: {
       get() {
-        return this.$store.getters.message
+        return this.$store.getters.textMessage
       },
       set(value) {
-        this.$store.dispatch('updateMessage', value);
+        this.$store.dispatch('updatetextMessage', value);
       }
     },
   },

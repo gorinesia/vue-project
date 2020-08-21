@@ -15,11 +15,10 @@
 			{{ form.question }}
 		</p>
 		<br>
-		<p>textMessage: 
-			{{ form.textMessage}}
-		</p>
+		<p>-ご相談内容-
 		<br>
-		<p>message:{{ message }}</p>
+			{{ textMessage}}
+		</p>
 		<button class="button is-primary" @click="back">前へ</button>
 	</div>
 </template>
@@ -28,7 +27,7 @@
 export default {
 	data: function(){
 		return {
-			message: this.$store.getters.message
+			textMessage: this.$store.getters.textMessage
 		}
 	},
   computed:{
