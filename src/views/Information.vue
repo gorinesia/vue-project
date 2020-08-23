@@ -63,7 +63,7 @@ export default {
       this.$router.push("/question");
     },
     generate() {
-			const nengoes = [];
+      const nengoes = [];
 			for (let y = 1920; y < 2021; y++) {
         if (y < 1926) {
 					nengoes.push({'year': y, 'label': `${y} (大正${y - 1911}年)`});
