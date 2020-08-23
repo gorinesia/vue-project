@@ -10,19 +10,16 @@ export default new Vuex.Store({
       birthday: '1989/12/13',
       question: 'OK!!!',
     },
+    gender:'',
     textMessage: '' 
   },
   getters: {
-    textMessage: state => state.textMessage
+    gender: state => state.gender,
+    textMessage: state => state.textMessage,
   },
   mutations: {
-    updatetextMessage(state, newMessage) {
+    updateTextMessage(state, newMessage) {
       state.textMessage = newMessage;
-    }
-  },
-  actions: {
-    updatetextMessage({commit}, newMessage) {
-      commit('updatetextMessage', newMessage);
     }
   }
 })
