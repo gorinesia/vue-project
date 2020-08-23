@@ -64,19 +64,19 @@ export default {
     },
     generate() {
       const nengoes = [];
-			for (let y = 1920; y < 2021; y++) {
+      for (let y = 1920; y < 2021; y++) {
         if (y < 1926) {
-					nengoes.push({'year': y, 'label': `${y} (大正${y - 1911}年)`});
-				} else if (y < 1989) {
-					nengoes.push({'year': y, 'label': `${y} (昭和${y - 1925}年)`});
-				} else if (y < 2019) {
-					nengoes.push({'year': y, 'label': `${y} (平成${y - 1988}年)`});
+          nengoes.push({'year': y, 'label': `${y} (大正${y - 1911}年)`});
+        } else if (y < 1989) {
+          nengoes.push({'year': y, 'label': `${y} (昭和${y - 1925}年)`});
+        } else if (y < 2019) {
+          nengoes.push({'year': y, 'label': `${y} (平成${y - 1988}年)`});
         } else if (y < 2021) {
-					nengoes.push({'year': y, 'label': `${y} (令和${y - 2018}年)`});
-				}
+          nengoes.push({'year': y, 'label': `${y} (令和${y - 2018}年)`});
+        }
       }
-			return nengoes;
-		}
+      return nengoes;
+    }
   }
 };
 </script>
