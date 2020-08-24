@@ -48,12 +48,42 @@
 export default {
   data() {
     return {
-      gender: "",
-      year: "",
-      month: "",
-      day: "",
       nengoes: [],
     }
+  },
+  computed: {
+    gender: {
+      get() {
+        return this.$store.getters.gender;
+      },
+      set(value) {
+        this.$store.commit("updateGender", value);
+      },
+    },
+    year: {
+      get() {
+        return this.$store.getters.year;
+      },
+      set(value) {
+        this.$store.commit("updateYear", value);
+      },
+    },
+    month: {
+      get() {
+        return this.$store.getters.month;
+      },
+      set(value) {
+        this.$store.commit("updateMonth", value);
+      },
+    },
+    day: {
+      get() {
+        return this.$store.getters.day;
+      },
+      set(value) {
+        this.$store.commit("updateDay", value);
+      },
+    },
   },
   mounted() {
     this.nengoes = this.generate();
