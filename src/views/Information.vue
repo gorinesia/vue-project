@@ -54,7 +54,7 @@ export default {
   computed: {
     gender: {
       get() {
-        return this.$store.getters.gender;
+        return this.$store.state.gender;
       },
       set(value) {
         this.$store.commit("updateGender", value);
@@ -62,7 +62,7 @@ export default {
     },
     year: {
       get() {
-        return this.$store.getters.year;
+        return this.$store.state.year;
       },
       set(value) {
         this.$store.commit("updateYear", value);
@@ -70,7 +70,7 @@ export default {
     },
     month: {
       get() {
-        return this.$store.getters.month;
+        return this.$store.state.month;
       },
       set(value) {
         this.$store.commit("updateMonth", value);
@@ -78,7 +78,7 @@ export default {
     },
     day: {
       get() {
-        return this.$store.getters.day;
+        return this.$store.state.day;
       },
       set(value) {
         this.$store.commit("updateDay", value);

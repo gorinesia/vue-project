@@ -30,14 +30,14 @@
 export default {
   data: function () {
     return {
-      gender: this.$store.getters.gender,
-      year: this.$store.getters.year,
-      month: this.$store.getters.month,
-      day: this.$store.getters.day,
-      question1: this.$store.getters.question1,
-      question2: this.$store.getters.question2,
-      question3: this.$store.getters.question3,
-      textMessage: this.$store.getters.textMessage,
+      gender: this.$store.state.gender,
+      year: this.$store.state.year,
+      month: this.$store.state.month,
+      day: this.$store.state.day,
+      question1: this.$store.state.question1,
+      question2: this.$store.state.question2,
+      question3: this.$store.state.question3,
+      textMessage: this.$store.state.textMessage,
     };
   },
   methods: {

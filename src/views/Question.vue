@@ -53,7 +53,7 @@ export default {
   computed: {
     question1: {
       get() {
-        return this.$store.getters.question1;
+        return this.$store.state.question1;
       },
       set(value) {
         this.$store.commit("updateQuestion1", value);
@@ -61,7 +61,7 @@ export default {
     },
     question2: {
       get() {
-        return this.$store.getters.question2;
+        return this.$store.state.question2;
       },
       set(value) {
         this.$store.commit("updateQuestion2", value);
@@ -69,7 +69,7 @@ export default {
     },
     question3: {
       get() {
-        return this.$store.getters.question3;
+        return this.$store.state.question3;
       },
       set(value) {
         this.$store.commit("updateQuestion3", value);
