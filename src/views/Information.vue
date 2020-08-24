@@ -6,10 +6,10 @@
     <div class="section">
       <p class="has-text-info"> -性別- </p>
       <br>
-      <input type="radio" id="man" value="男性" v-model="picked"> 男性
-      <input type="radio" id="woman" value="女性" v-model="picked"> 女性
+      <input type="radio" id="man" value="男性" v-model="gender"> 男性
+      <input type="radio" id="woman" value="女性" v-model="gender"> 女性
       <br><br>
-      <span>gender: {{ picked }}</span>
+      <span>gender: {{ gender }}</span>
     </div> 
     <div>	
       <p class="has-text-info"> -生年月日- </p>
@@ -31,11 +31,11 @@
       </div>
           月
       <div class="select is-dark">
-        <select v-model="day">
+        <select v-model="date">
           <option disabled value="">Please select one</option>
-          <option v-for="day of 31" :key="day">{{ day }}</option>
+          <option v-for="date of 31" :key="date">{{ date }}</option>
         </select>
-        <span>day: {{ day }}</span>
+        <span>date: {{ date }}</span>
       </div>
           日	
     </div>
@@ -46,21 +46,37 @@
 
 <script>
 export default {
-  data: function(){
-		return {
-			picked: '',
-			year: '',
-			month: '',
-			day: '',
-		}
-	},
   computed: {
-    message: {
+    gender: {
       get() {
-        return this.$store.getters.message
+        return this.$store.state.gender
       },
       set(value) {
-        this.$store.dispatch('updateMessage', value);
+        this.$store.commit('userGender', value);
+      }
+    },
+    year: {
+      get() {
+        return this.$store.state.year
+      },
+      set(value) {
+        this.$store.commit('userYear', value);
+      }
+    },
+    month: {
+      get() {
+        return this.$store.state.month
+      },
+      set(value) {
+        this.$store.commit('userMonth', value);
+      }
+    },
+    date: {
+      get() {
+        return this.$store.state.date
+      },
+      set(value) {
+        this.$store.commit('userDate', value);
       }
     },
   },

@@ -1,28 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import mutations from './mutations'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    form: {
-      gender: 'Man',
-      birthday: '1989/12/13',
-      question: 'OK!!!',
-    },
-    textMessage: '' 
+    gender: '',
+    year: '',
+    month: '',
+    date: '',
+    question1: '',
+    question2: '',
+    question3: '',
+    textMessage: '',
   },
-  getters: {
-    textMessage: state => state.textMessage
-  },
-  mutations: {
-    updatetextMessage(state, newMessage) {
-      state.textMessage = newMessage;
-    }
-  },
-  actions: {
-    updatetextMessage({commit}, newMessage) {
-      commit('updatetextMessage', newMessage);
-    }
-  }
+  mutations
 })

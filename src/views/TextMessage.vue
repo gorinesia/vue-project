@@ -21,10 +21,10 @@ export default {
 	computed: {
     textMessage: {
       get() {
-        return this.$store.getters.textMessage
+        return this.$store.state.textMessage
       },
       set(value) {
-        this.$store.dispatch('updatetextMessage', value);
+        this.$store.commit('updateTextMessage', value);
       }
     },
   },
