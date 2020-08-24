@@ -22,6 +22,7 @@
 		<p>textMessage: {{ textMessage }}</p>
 		<br>
 		<button class="button is-primary" @click="back">前へ</button>
+		<button class="button is-primary">送信</button>
 	</div>
 </template>
 
