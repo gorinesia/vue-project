@@ -11,8 +11,8 @@
         <p class="has-text-info">-性別-</p>
       </div>
       <div>  
-        <input type="radio" id="man" value="男性" v-model="gender" /> 男性
-        <input type="radio" id="woman" value="女性" v-model="gender" /> 女性
+        <input type="radio" id="man" value="男性" v-model="gender" @change="setUser"/> 男性
+        <input type="radio" id="woman" value="女性" v-model="gender" @change="setUser"/> 女性
       </div>
       <div>
         <span>gender: {{ gender }}</span>
@@ -23,7 +23,7 @@
     </div>
     <div class="birthday">
       <div class="select is-dark">
-        <select id="year" v-model="year">
+        <select id="year" v-model="year" @change="setUser">
           <option disabled value="">Please select one</option>
           <option v-for="nengo in nengoes" :value="nengo.year" :key="nengo.year">{{ nengo.label }}</option>nen
         </select>
@@ -32,16 +32,16 @@
         </div>
       </div>年
       <div class="select is-dark">
-        <select v-model="month">
+        <select v-model="month" @change="setUser">
           <option disabled value="">Please select one</option>
           <option v-for="month of 12" :key="month">{{ month + '月' }}</option>
         </select>
         <span>month: {{ month }}</span>
       </div>月
-      <div class="select is-dark">
+      <div class="select is-dark" @change="setUser">
         <select v-model="day" @change="setUser">
           <option disabled value="">Please select one</option>
-          <option v-for="day of 31" :key="day">{{ day }}</option>
+          <option v-for="day of 31" :key="day">{{ day + '日' }}</option>
         </select>
         <span>day: {{ day }}</span>
       </div>
@@ -57,47 +57,25 @@
 export default {
   data() {
     return {
+      gender: '',
+      year: '',
+      month: '',
+      day: '',
       nengoes: [],
     }
-  },
-  computed: {
-    gender: {
-      get() {
-        return this.$store.state.gender;
-      },
-      set(value) {
-        this.$store.commit("updateGender", value);
-      },
-    },
-    year: {
-      get() {
-        return this.$store.state.year;
-      },
-      set(value) {
-        this.$store.commit("updateYear", value);
-      },
-    },
-    month: {
-      get() {
-        return this.$store.state.month;
-      },
-      set(value) {
-        this.$store.commit("updateMonth", value);
-      },
-    },
-    day: {
-      get() {
-        return this.$store.state.day;
-      },
-      set(value) {
-        this.$store.commit("updateDay", value);
-      },
-    },
   },
   mounted() {
     this.nengoes = this.generate();
   },
   methods: {
+    setUser() {
+      this.$store.commit('setUser', {
+        gender: this.gender,
+        year: this.year,
+        month: this.month,
+        day: this.day,
+      })
+    },
     next() {
       this.$router.push("/choiceQuestions");
     },

@@ -10,7 +10,7 @@
       <p class="is-size-5 has-text-info">-ご相談内容-</p>
     </div>
     <div>
-      <textarea class="textarea is-info is-large" type="text" v-model="textMessage"></textarea>
+      <textarea class="textarea is-info is-large" type="text" v-model="textMessage" @input="setTextMessage"></textarea>
     </div>
     <div>
       <pre>TextMessage: {{ textMessage }}</pre>
@@ -24,17 +24,17 @@
 
 <script>
 export default {
-  computed: {
-    textMessage: {
-      get() {
-        return this.$store.state.textMessage;
-      },
-      set(value) {
-        this.$store.commit("updateTextMessage", value);
-      },
-    },
+  data() {
+    return {
+      textMessage: ''
+    }
   },
   methods: {
+    setTextMessage() {
+      this.$store.commit('setTextMessage', {
+        textMessage: this.textMessage
+      })
+    },
     back() {
       this.$router.push("/ChoiceQuestions");
     },
