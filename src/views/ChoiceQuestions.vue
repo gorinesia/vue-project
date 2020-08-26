@@ -1,44 +1,48 @@
 <template>
   <div>
-    <h1 class="button is-info is-medium">STEP.02</h1>
-    <br />
-    <br />
-    <p class="is-size-4 has-text-weight-bold hero is-primary">以下にお答えください</p>
-    <br />
     <div>
-      <p class="has-text-info">現在、生命保険に加入されていますか？</p>
-      <label for="Gender"></label>
-      <input type="radio" id="yes" value="はい" @click="ok = !ok" v-model="question1" /> はい
-      <input type="radio" id="no" value="いいえ" @click="ok = !ok" v-model="question1" /> いいえ
-      <br />
-      <br />
-      <span>select: {{ question1 }}</span>
+      <h1 class="button is-info is-medium">STEP.02</h1>
     </div>
-    <br />
-    <br />
-    <div v-if="ok">
-      <p class="has-text-info">現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</p>
-      <label for="Gender"></label>
-      <input type="radio" id="yes" value="はい" @click="ok2 = !ok2" v-model="question2" /> はい
-      <input type="radio" id="no" value="いいえ" @click="ok2 = !ok2" v-model="question2" /> いいえ
-      <br />
-      <br />
-      <span>select: {{ question2 }}</span>
+    <div>
+      <p class="is-size-4 has-text-weight-bold hero is-primary">以下にお答えください</p>
     </div>
-    <br />
-    <br />
-    <div v-if="ok2">
-      <p class="has-text-info">過去5年以内に、病気やけがで手術をうけたこと、または継続して7日以上の入院をしたことがありますか？</p>
-      <label for="Gender"></label>
-      <input type="radio" id="yes" value="はい" v-model="question3" /> はい
-      <input type="radio" id="no" value="いいえ" v-model="question3" /> いいえ
-      <br />
-      <br />
-      <span>select: {{ question3 }}</span>
+    <div>
+      <div>
+        <p class="has-text-info">現在、生命保険に加入されていますか？</p>
+        <label for="Gender"></label>
+        <input type="radio" id="yes" value="はい" @click="nextQuestion1" v-model="question1" /> はい
+        <input type="radio" id="no" value="いいえ" @click="nextQuestion1" v-model="question1" /> いいえ
+      </div>
+      <div>
+        <span>select: {{ question1 }}</span>
+      </div>
     </div>
-    <br />
-    <button class="button is-primary" @click="back">前へ</button>
-    <button class="button is-primary" @click="next">次へ</button>
+    <div v-if="select1">
+      <div>
+        <p class="has-text-info">現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</p>
+        <label for="Gender"></label>
+        <input type="radio" id="yes" value="はい" @click="nextQuestion2" v-model="question2" /> はい
+        <input type="radio" id="no" value="いいえ" @click="nextQuestion2" v-model="question2" /> いいえ
+      </div>
+      <div>
+        <span>select: {{ question2 }}</span>
+      </div>
+    </div>
+    <div v-if="select2">
+      <div>
+        <p class="has-text-info">過去5年以内に、病気やけがで手術をうけたこと、または継続して7日以上の入院をしたことがありますか？</p>
+        <label for="Gender"></label>
+        <input type="radio" id="yes" value="はい" v-model="question3" /> はい
+        <input type="radio" id="no" value="いいえ" v-model="question3" /> いいえ
+      </div>
+      <div>
+        <span>select: {{ question3 }}</span>
+      </div>
+    </div>
+    <div>
+      <button class="button is-primary" @click="back">前へ</button>
+      <button class="button is-primary" @click="next">次へ</button>
+    </div>
   </div>
 </template>
 
@@ -46,8 +50,8 @@
 export default {
   data: function () {
     return {
-      ok: false,
-      ok2: false,
+      select1: false,
+      select2: false,
     };
   },
   computed: {
@@ -77,6 +81,12 @@ export default {
     },
   },
   methods: {
+    nextQuestion1() {
+      this.select1 = !this.select1
+    },
+    nextQuestion2() {
+      this.select2 = !this.select2
+    },
     back() {
       this.$router.push("/");
     },

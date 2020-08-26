@@ -33,4 +33,8 @@
 button {
   margin: 5px;
 }
+
+div {
+  margin: 20px;
+}
 </style>
