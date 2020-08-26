@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import mutations from './mutations'
 
 Vue.use(Vuex)
 
@@ -9,11 +8,26 @@ export default new Vuex.Store({
     gender: '',
     year: '',
     month: '',
-    date: '',
+    day: '',
     question1: '',
     question2: '',
     question3: '',
-    textMessage: '',
+    textMessage: ''
   },
-  mutations
+  mutations: {
+    setUser(state, user) {
+      state.gender = user.gender;
+      state.year = user.year;
+      state.month = user.month;
+      state.day = user.day
+    },
+    setQuestion(state, user) {
+      state.question1 = user.question1;
+      state.question2 = user.question2;
+      state.question3 = user.question3;
+    },
+    setTextMessage(state, user) {
+      state.textMessage = user.textMessage
+    }
+  }
 })

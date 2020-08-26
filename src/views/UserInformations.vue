@@ -6,8 +6,8 @@
     <div class="section">
       <p class="has-text-info"> -性別- </p>
       <br>
-      <input type="radio" id="man" value="男性" v-model="gender"> 男性
-      <input type="radio" id="woman" value="女性" v-model="gender"> 女性
+      <input type="radio" id="man" value="男性" v-model="gender" @change="setUser"> 男性
+      <input type="radio" id="woman" value="女性" v-model="gender" @change="setUser"> 女性
       <br><br>
       <span>gender: {{ gender }}</span>
     </div> 
@@ -15,15 +15,15 @@
       <p class="has-text-info"> -生年月日- </p>
       <br>
       <div class="select is-dark">
-        <select id="year" v-model="year">
+        <select id="year" v-model="year" @change="setUser">
           <option disabled value="">Please select one</option>
-          <option v-for="i in 100" :value="i + 1920" :key="i">{{ (i + 1920) | nengo }}</option>
+          <option v-for="i in 100" :value="i + 1920" :key="i">{{ (i + 1920) | setYear }}</option>
         </select>
         <span>year: {{ year }}</span>
       </div>
           年
       <div class="select is-dark">
-        <select v-model="month">
+        <select v-model="month" @change="setUser">
           <option disabled value="">Please select one</option>
           <option v-for="month of 12" :key="month">{{ month }}</option>
         </select>
@@ -31,11 +31,11 @@
       </div>
           月
       <div class="select is-dark">
-        <select v-model="date">
+        <select v-model="day" @change="setUser">
           <option disabled value="">Please select one</option>
-          <option v-for="date of 31" :key="date">{{ date }}</option>
+          <option v-for="day of 31" :key="day">{{ day }}</option>
         </select>
-        <span>date: {{ date }}</span>
+        <span>day: {{ day }}</span>
       </div>
           日	
     </div>
@@ -46,56 +46,38 @@
 
 <script>
 export default {
-  computed: {
-    gender: {
-      get() {
-        return this.$store.state.gender
-      },
-      set(value) {
-        this.$store.commit('userGender', value);
-      }
-    },
-    year: {
-      get() {
-        return this.$store.state.year
-      },
-      set(value) {
-        this.$store.commit('userYear', value);
-      }
-    },
-    month: {
-      get() {
-        return this.$store.state.month
-      },
-      set(value) {
-        this.$store.commit('userMonth', value);
-      }
-    },
-    date: {
-      get() {
-        return this.$store.state.date
-      },
-      set(value) {
-        this.$store.commit('userDate', value);
-      }
-    },
+  data() {
+    return {
+      gender: '',
+      year: '',
+      month: '',
+      day: ''
+    }
   },
   methods: {
+    setUser() {
+      this.$store.commit('setUser', {
+        gender: this.gender,
+        year: this.year,
+        month: this.month,
+        day: this.day,
+      })
+    },
     next() {
       this.$router.push('/question')
     }
   },
   filters: {
-		nengo(y) {
+		setYear(y) {
 			let result;
 			if (y > 2018) {
-				result = `${y} (令和${y-2018}年)`;
+				result = `${y} (令和${y-2018})`;
 			} else if (y > 1988) {
-				result = `${y} (平成${y-1988}年)`;
+				result = `${y} (平成${y-1988})`;
 			} else if (y > 1925) {
-				result = `${y} (昭和${y-1925}年)`;
+				result = `${y} (昭和${y-1925})`;
 			} else if (y > 1911) {
-				result = `${y} (大正${y-1911}年)`;
+				result = `${y} (大正${y-1911})`;
 			}
 			return result;
 		}
