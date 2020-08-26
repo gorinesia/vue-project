@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Information from '../views/Information.vue'
-import Question from '../views/Question.vue'
-import TextMessage from '../views/TextMessage.vue'
+import UserInformations from '../views/UserInformations.vue'
+import ChoiceQuestions from '../views/ChoiceQuestions.vue'
+import ConsultationMessage from '../views/ConsultationMessage.vue'
 import ConfirmForm from '../views/ConfirmForm.vue'
 
 Vue.use(VueRouter)
@@ -10,21 +10,21 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'Information',
-    component: Information
+    name: 'UserInformations',
+    component: UserInformations
   },
   {
-    path: '/question',
-    name: 'Question',
-    component: Question
+    path: '/choiceQuestions',
+    name: 'ChoiceQuestions',
+    component: ChoiceQuestions
   },
   {
-    path: '/textMessage',
-    name: 'TextMessage',
-    component: TextMessage
+    path: '/consultationMessage',
+    name: 'ConsultationMessage',
+    component: ConsultationMessage
   },
   {
-    path: '/confirm',
+    path: '/confirmForm',
     name: 'ConfirmForm',
     component: ConfirmForm
   }

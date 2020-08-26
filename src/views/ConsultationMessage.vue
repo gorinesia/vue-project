@@ -31,10 +31,10 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push("/question");
+      this.$router.push("/ChoiceQuestions");
     },
     next() {
-      this.$router.push("/confirm");
+      this.$router.push("/confirmForm");
     },
   },
 };

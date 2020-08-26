@@ -81,7 +81,7 @@ export default {
       this.$router.push("/");
     },
     next() {
-      this.$router.push("/textMessage");
+      this.$router.push("/consultationMessage");
     },
   },
 };

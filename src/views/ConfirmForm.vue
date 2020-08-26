@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push("/textMessage");
+      this.$router.push("/consultationMessage");
     },
   },
 };

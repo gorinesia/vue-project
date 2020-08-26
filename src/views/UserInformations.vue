@@ -90,7 +90,7 @@ export default {
   },
   methods: {
     next() {
-      this.$router.push("/question");
+      this.$router.push("/choiceQuestions");
     },
     generate() {
       const nengoes = [];
