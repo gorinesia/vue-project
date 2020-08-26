@@ -2,17 +2,17 @@
   <div>
     <div>
       <h1 class="button is-info is-medium">STEP.04</h1>
+      <div>
+        <h2 class="is-size-4 has-text-weight-bold hero is-primary">Confirmation</h2>
+      </div>
+    </div>
     <div>
-      <h2 class="is-size-4 has-text-weight-bold hero is-primary">Confirmation</h2>
-    </div>
-    </div>
-		<div>
-      <p class="has-text-info"> -性別- </p>
+      <p class="has-text-info">-性別-</p>
       <p>gender: {{ gender }}</p>
     </div>
     <div>
-      <p class="has-text-info"> -生年月日- </p>
-      <p>birthday: {{ year }}年 {{ month }} {{ day }}</p>
+      <p class="has-text-info">-生年月日-</p>
+      <p>birthday: {{ year }}年 {{ month }}月 {{ day }}日</p>
     </div>
     <div>
       <p class="has-text-info">-現在、生命保険に加入されていますか？-</p>
